@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#ffffff"
+    android:layout_height="match_parent"
+    tools:context="porster.dragbottom.MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:text="Test\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\nTest\n"
+        android:textColor="@color/colorAccent"
+        android:layout_height="match_parent"/>
+
+    <ImageView
+        android:id="@+id/k012"
+        android:layout_marginTop="50dp"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:src="@mipmap/k012"/>
+    <ImageView
+        android:id="@+id/k24"
+        android:layout_marginTop="250dp"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:src="@mipmap/k24"/>
+
+</FrameLayout>

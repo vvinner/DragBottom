@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<porster.dragbottom.drag.DragFramlayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical">
+<porster.dragbottom.drag.DragFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                         android:layout_width="match_parent"
+                                         android:layout_height="match_parent"
+                                         android:orientation="vertical">
 
     <ImageView
         android:id="@+id/k012"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@mipmap/k012"/>
-</porster.dragbottom.drag.DragFramlayout>
+</porster.dragbottom.drag.DragFrameLayout>

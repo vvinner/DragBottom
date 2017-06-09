@@ -15,7 +15,7 @@ import android.widget.FrameLayout;
  * Created by Porster on 17/6/9.
  */
 
-public class DragFramlayout extends FrameLayout{
+public class DragFrameLayout extends FrameLayout{
     public static final String TAG="DragFramlayout";
 
     private ViewDragHelper mDragHelper;
@@ -24,7 +24,7 @@ public class DragFramlayout extends FrameLayout{
     public int DEF_BG_COLOR=0xff000000;
 
 
-    public DragFramlayout(Context context,AttributeSet attrs) {
+    public DragFrameLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }

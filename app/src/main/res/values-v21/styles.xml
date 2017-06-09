@@ -7,7 +7,6 @@
     </style>
     <style name="AppTheme.drag">
         <item name="android:windowIsTranslucent">true</item>
-        <!-- Customize your theme here. -->
     </style>
     <!--开启专场动画-->
 </resources>

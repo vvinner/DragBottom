@@ -5,12 +5,12 @@
 ![](https://github.com/vvinner/DragBottom/blob/master/case.gif)<br>
 1、XML
 ```Xml
-<porster.dragbottom.drag.DragFramlayout xmlns:android="http://schemas.android.com/apk/res/android"
+<porster.dragbottom.drag.DragFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical">
               //Your xml
-</porster.dragbottom.drag.DragFramlayout>
+</porster.dragbottom.drag.DragFrameLayout>
 ```
 2、Theme  
 -------

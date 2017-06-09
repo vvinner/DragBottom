@@ -1,7 +1,6 @@
 # DragBottom
-适用于查看大图的下拉拖拽返回控件
+适用于查看大图的下拉拖拽返回控件<br>
 共享元素适用于5.0+<br>
-SharedElements SupportLollipop<br>
 
 LOLLIPOP
 

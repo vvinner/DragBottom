@@ -28,14 +28,16 @@
     android:interpolator="@android:anim/decelerate_interpolator"
     android:zAdjustment="top" >
 
-    <scale
-        android:duration="300"
-        android:fromXScale="1.0"
-        android:fromYScale="1.0"
-        android:pivotX="50%"
-        android:pivotY="50%"
-        android:toXScale="0.5"
-        android:toYScale="0.5" />
+    <!--<scale-->
+        <!--android:duration="300"-->
+        <!--android:fromXScale="1.0"-->
+        <!--android:fromYScale="1.0"-->
+        <!--android:pivotX="50%"-->
+        <!--android:pivotY="50%"-->
+        <!--android:toXScale="0.5"-->
+        <!--android:toYScale="0.5" />-->
+
+    <translate android:fromYDelta="0%p" android:toYDelta="100%p" android:duration="300"/>
 
     <alpha
         android:duration="300"

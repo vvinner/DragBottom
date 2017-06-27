@@ -25,8 +25,11 @@ DragFrameLayout.setDragScale(false);
               //Your xml
 </porster.dragbottom.drag.DragFrameLayout>
 ```
-2、Theme  
+2、Theme  
 -------
 ```Xml
 <item name="android:windowIsTranslucent">true</item>
 ```
+源码解析
+-------
+http://blog.csdn.net/dqmj2/article/details/72956990

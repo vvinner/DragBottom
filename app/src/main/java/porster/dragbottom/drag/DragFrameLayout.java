@@ -44,6 +44,75 @@ public class DragFrameLayout extends FrameLayout {
         if (getContext() instanceof Activity) {
             ((Activity) getContext()).getWindow().getDecorView().setBackgroundColor(DEF_BG_COLOR);
         }
+        mDragHelper=ViewDragHelper.create(this,1.0f,new ViewDragHelper.Callback(){
+            @Override
+            public boolean tryCaptureView(View child, int pointerId) {
+                //允许子视图进行拖拽,这里默认都允许
+                return true;
+            }
+            /**是否允许所有方向拖拽*/
+            boolean needDrag;
+            @Override
+            public int clampViewPositionVertical(View child, int top, int dy) {
+                if (needDrag) {
+                    return top;
+                }
+                if (top < 0) {//只允许向下拖拽
+                    top = 0;
+                } else if (top > 100) {//向下拖拽超过100px后，释放允许任何方向拖拽
+                    needDrag = true;
+                }
+                return top;
+            }
+
+            @Override
+            public int clampViewPositionHorizontal(View child, int left, int dx) {
+                return needDrag ? left : 0;
+            }
+
+            /**
+             *
+             * @param changedView   被拖动的View
+             * @param left          水平拖动距离
+             * @param top           垂直拖动距离
+             * @param dx            每次拖拽产生的水平距离x2-x1
+             * @param dy            每次拖拽产生的垂直距离y2-y1
+             */
+            @Override
+            public void onViewPositionChanged(View changedView, int left, int top, int dx, int dy) {
+                super.onViewPositionChanged(changedView, left, top, dx, dy);
+                float present = 1 - (top * 1.0f) / (getHeight());
+
+                if (getContext() instanceof Activity) {
+                    int alpah = Math.min((int) (255 * present), 255);
+                    ((Activity) getContext()).getWindow().getDecorView().setBackgroundColor(Color.argb(alpah, 0, 0, 0));
+                }
+
+                float maxScale = Math.min(present, 1.0f);//Max,1.0f
+                float minScale = Math.max(0.5f, maxScale);//Min,5.0f;
+
+                changedView.setScaleX(minScale);
+                changedView.setScaleY(minScale);
+            }
+            boolean mNeedRelease;
+            @Override
+            public void onViewReleased(View releasedChild, float xvel, float yvel) {
+                super.onViewReleased(releasedChild, xvel, yvel);
+
+                if (mNeedRelease) {
+                    if (getContext() instanceof Activity) {
+                        ((Activity) getContext()).onBackPressed();
+                    }
+                } else {
+                    needDrag = false;
+                    //让视图归位
+                    mDragHelper.settleCapturedViewAt(finalLeft, finalTop);
+                    releasedChild.setScaleX(1.0f);
+                    releasedChild.setScaleY(1.0f);
+                    invalidate();
+                }
+            }
+        });
 
         mDragHelper = ViewDragHelper.create(this, 1.0f, new ViewDragHelper.Callback() {
             @Override
@@ -61,6 +130,7 @@ public class DragFrameLayout extends FrameLayout {
                     }
                 } else {
                     needDrag = false;
+                    //让视图归位,
                     mDragHelper.settleCapturedViewAt(finalLeft, finalTop);
                     if(mDragScale){
                         releasedChild.setScaleX(1.0f);
